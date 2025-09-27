@@ -251,7 +251,11 @@ NodeDB::NodeDB()
     pickNewNodeNum();
 
     // Set our board type so we can share it with others
+#ifdef USERPREFS_CONFIG_HW_MODEL
+    owner.hw_model = USERPREFS_CONFIG_HW_MODEL;
+#else
     owner.hw_model = HW_VENDOR;
+#endif
     // Ensure user (nodeinfo) role is set to whatever we're configured to
     owner.role = config.device.role;
     // Ensure macaddr is set to our macaddr as it will be copied in our info below
@@ -1090,8 +1094,24 @@ void NodeDB::pickNewNodeNum()
     NodeNum nodeNum = myNodeInfo.my_node_num;
     getMacAddr(ourMacAddr); // Make sure ourMacAddr is set
     if (nodeNum == 0) {
-        // Pick an initial nodenum based on the macaddr
-        nodeNum = (ourMacAddr[2] << 24) | (ourMacAddr[3] << 16) | (ourMacAddr[4] << 8) | ourMacAddr[5];
+        // Pick an initial nodenum based on the macaddr using FNV-1a hash with configurable salt
+        uint32_t salt = 0x12345678; // Default salt value
+#ifdef USERPREFS_NODE_SALT
+        // Parse hex string from USERPREFS_NODE_SALT
+        if (strlen(USERPREFS_NODE_SALT) >= 10 && 
+            USERPREFS_NODE_SALT[0] == '0' && 
+            (USERPREFS_NODE_SALT[1] == 'x' || USERPREFS_NODE_SALT[1] == 'X')) {
+            salt = strtoul(USERPREFS_NODE_SALT, NULL, 16);
+        }
+#endif
+        
+        // FNV-1a hash algorithm
+        uint32_t hash = 0x811C9DC5; // FNV offset basis
+        for (int i = 0; i < 6; i++) {
+            hash ^= ourMacAddr[i];
+            hash *= 0x01000193; // FNV prime
+        }
+        nodeNum = hash ^ salt; // XOR with configurable salt
     }
 
     meshtastic_NodeInfoLite *found;
