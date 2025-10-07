@@ -57,6 +57,73 @@
   // "USERPREFS_RINGTONE_NAG_SECS": "60",
   "USERPREFS_RINGTONE_RTTTL": "24:d=32,o=5,b=565:f6,p,f6,4p,p,f6,p,f6,2p,p,b6,p,b6,p,b6,p,b6,p,b,p,b,p,b,p,b,p,b,p,b,p,b,p,b,1p.,2p.,p",
   "USERPREFS_TZ_STRING": "tzplaceholder                                         ",
-  "USERPREFS_NODE_SALT": "0xE6216969", // Different salt = generate a different client ID. Must be 8 hex digits.
-  "USERPREFS_CONFIG_HW_MODEL": "meshtastic_HardwareModel_T_LORA_PAGER" // Override hardware model, falls back to actual hardware model if not defined
+  "USERPREFS_NODE_SALT": "0x00000000", // Different salt = generate a different client ID. Must be 8 hex digits.
+  "USERPREFS_CONFIG_HW_MODEL": "meshtastic_HardwareModel_TBEAM"
+  // Override hardware model, falls back to actual hardware model if not defined
+  // Acceptable hardware models are:
+// meshtastic_HardwareModel_TBEAM
+// meshtastic_HardwareModel_TBEAM_V0P7
+// meshtastic_HardwareModel_LILYGO_TBEAM_S3_CORE
+// meshtastic_HardwareModel_DIY_V1
+// meshtastic_HardwareModel_RAK11200
+// meshtastic_HardwareModel_HELTEC_V2_0
+// meshtastic_HardwareModel_HELTEC_V2_1
+// meshtastic_HardwareModel_HELTEC_WIRELESS_BRIDGE
+// meshtastic_HardwareModel_HELTEC_V1
+// meshtastic_HardwareModel_TLORA_V1
+// meshtastic_HardwareModel_TLORA_V2
+// meshtastic_HardwareModel_TLORA_V1_1P3
+// meshtastic_HardwareModel_TLORA_V2_1_1P6
+// meshtastic_HardwareModel_TLORA_V2_1_1P8
+// meshtastic_HardwareModel_TLORA_C6
+// meshtastic_HardwareModel_T_DECK
+// meshtastic_HardwareModel_T_WATCH_S3
+// meshtastic_HardwareModel_GENIEBLOCKS
+// meshtastic_HardwareModel_PRIVATE_HW
+// meshtastic_HardwareModel_NANO_G1
+// meshtastic_HardwareModel_M5STACK
+// meshtastic_HardwareModel_M5STACK_CORES3
+// meshtastic_HardwareModel_STATION_G1
+// meshtastic_HardwareModel_DR_DEV
+// meshtastic_HardwareModel_HELTEC_HRU_3601
+// meshtastic_HardwareModel_HELTEC_V3
+// meshtastic_HardwareModel_HELTEC_WSL_V3
+// meshtastic_HardwareModel_HELTEC_WIRELESS_TRACKER_V1_0
+// meshtastic_HardwareModel_HELTEC_WIRELESS_TRACKER
+// meshtastic_HardwareModel_HELTEC_WIRELESS_PAPER_V1_0
+// meshtastic_HardwareModel_HELTEC_WIRELESS_PAPER
+// meshtastic_HardwareModel_TLORA_T3_S3
+// meshtastic_HardwareModel_CDEBYTE_EORA_S3
+// meshtastic_HardwareModel_BETAFPV_2400_TX
+// meshtastic_HardwareModel_NANO_G1_EXPLORER
+// meshtastic_HardwareModel_BETAFPV_900_NANO_TX
+// meshtastic_HardwareModel_PICOMPUTER_S3
+// meshtastic_HardwareModel_HELTEC_HT62
+// meshtastic_HardwareModel_EBYTE_ESP32_S3
+// meshtastic_HardwareModel_THINKNODE_M2
+// meshtastic_HardwareModel_THINKNODE_M5
+// meshtastic_HardwareModel_ESP32_S3_PICO
+// meshtastic_HardwareModel_SENSELORA_S3
+// meshtastic_HardwareModel_CHATTER_2
+// meshtastic_HardwareModel_STATION_G2
+// meshtastic_HardwareModel_UNPHONE
+// meshtastic_HardwareModel_WIPHONE
+// meshtastic_HardwareModel_RADIOMASTER_900_BANDIT_NANO
+// meshtastic_HardwareModel_RADIOMASTER_900_BANDIT
+// meshtastic_HardwareModel_HELTEC_CAPSULE_SENSOR_V3
+// meshtastic_HardwareModel_HELTEC_VISION_MASTER_T190
+// meshtastic_HardwareModel_HELTEC_VISION_MASTER_E213
+// meshtastic_HardwareModel_HELTEC_VISION_MASTER_E290
+// meshtastic_HardwareModel_SENSECAP_INDICATOR
+// meshtastic_HardwareModel_SEEED_XIAO_S3
+// meshtastic_HardwareModel_MESH_TAB
+// meshtastic_HardwareModel_T_ETH_ELITE
+// meshtastic_HardwareModel_HELTEC_SENSOR_HUB
+// meshtastic_HardwareModel_CROWPANEL
+// meshtastic_HardwareModel_RAK3312
+// meshtastic_HardwareModel_LINK_32
+// meshtastic_HardwareModel_T_DECK_PRO
+// meshtastic_HardwareModel_T_LORA_PAGER
+// meshtastic_HardwareModel_HELTEC_V4
+// meshtastic_HardwareModel_M5STACK_C6L
 }
